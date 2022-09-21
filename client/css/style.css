@@ -331,7 +331,7 @@ box-shadow: inset 0 0 20px #0009;
 }
 
 .btn-ready{
-    margin-top:1rem;
+    margin-top:1.4rem;
     width: 50%;
     align-self: center;
     background-color:  var(--Paper-Gradient2);
@@ -462,24 +462,29 @@ box-shadow: inset 0 0 20px #0009;
         .game-battle .container-button{
             position: relative;
             top:0;
+            order:0;
         }
         .game-battle .info {
-            /* flex-direction: column; */
             flex-wrap: wrap;
             position: relative;
         }
+        .game-battle .info > .my , .game-battle .info > .opp {
+            flex:50%;
+            height:inherit
+        }
+        .game-battle .info{
+            order:2;
+        }
         .game-battle .info  .status-win{
             order:1;
-            /* flex:1; */
+            flex:1;
             margin-top: 2rem;
-            position: absolute;
-            bottom:-150px;
-            left:50%;
-            transform: translateX(-50%);
+            
+          
 
         }
         .link{
-            position: absolute;
+            position: static;
             bottom:0;
             left:0;
             transform: none;
@@ -490,4 +495,22 @@ box-shadow: inset 0 0 20px #0009;
             height:120px;
             width: 120px;
         }
+        .link{
+            order:3;
+
+        }
+        .link span{
+            font-size: 12px;
+        }
+        .btn-ready{
+            order:1;
+        }
+     }
+
+     .attribution{
+        position: absolute;
+        top:30px;
+        right:30px;
+        width: fit-content;
+        height: fit-content;
      }

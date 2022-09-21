@@ -409,3 +409,4 @@ function copy(text){
     link.after(h3)
     setTimeout(()=>h3.remove(),1000)
 }
+

@@ -1,3 +1,4 @@
+
 (() => {
     let oldPushState = history.pushState;
     history.pushState = function pushState() {
