@@ -350,7 +350,7 @@ box-shadow: inset 0 0 20px #0009;
 
 .rooms-group{
     width:min(98%,400px);
-    min-height:200px;
+    max-height:200px;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: #0003;
