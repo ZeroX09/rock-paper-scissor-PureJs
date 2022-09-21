@@ -96,6 +96,8 @@ socket.on('again-process',()=>{
 
 socket.on('another-left',()=>{
     pushState('/')
+    resetting();
+
 })
 
 onlineButton.addEventListener('click',startGameOnline);
@@ -110,6 +112,10 @@ prevButton.forEach(item=>item.addEventListener("click",()=>{
     let url = new URL(window.location.href);
     if(url.searchParams.get('roomId')){
         socket.emit('left');
+        resetting();
+         setInformation("waiting..","choose")
+         
+
     }
   pushState('/');
 }));
@@ -342,7 +348,11 @@ function checkResults(){
 
 
     statusBattle.querySelector('.state').innerText = state;
+    console.log(state)
+    if(state.trim()){
     toggleElement(statusBattle);
+    }
+    
 
 
 }
@@ -351,11 +361,11 @@ function resetting(){
     results = {another:{},my:{}};
     my.innerHTML ="";
     opp.innerHTML = "";
-    setInformation('The opponent makes a choice..',"Choose");
     btnsGame.forEach(btn=>btn.classList.remove('checked'));
-    toggleElement(statusBattle)
-    toggleElement(containerButton);
-    toggleElement(btnReady)
+    toggleElement(statusBattle,false)
+
+    toggleElement(containerButton,true);
+    toggleElement(btnReady,true)
     againCircleUr.classList.remove('checked');
     againCircleOpp.classList.remove('checked');
 
@@ -379,6 +389,8 @@ function againMatch(){
 
 function againProccess(){
         resetting();
+    setInformation('The opponent makes a choice..',"Choose");
+
     
 }
 

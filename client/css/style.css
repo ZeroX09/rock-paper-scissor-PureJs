@@ -340,6 +340,7 @@ box-shadow: inset 0 0 20px #0009;
     border-radius: 5px;
     color:var(--white);
     cursor: pointer;
+    z-index: 5;
 }
 .btn-ready:active{
     background-color: var(--Score-Text);
@@ -362,6 +363,7 @@ box-shadow: inset 0 0 20px #0009;
     position: absolute;
     top:30px;
     left:30px;
+    z-index: 5;
 }
 .prev svg{
     height: 30px;
